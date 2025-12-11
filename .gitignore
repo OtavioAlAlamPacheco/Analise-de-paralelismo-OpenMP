@@ -1,0 +1,16 @@
+# Arquivos de Sistema
+.DS_Store
+Thumbs.db
+*.exe
+*.out
+*.o
+
+# Executáveis C/C++ (Se o Makefile gerar binários sem extensão)
+src/seq/saxpy_seq
+src/omp/saxpy_omp_simd
+src/omp/saxpy_simd
+src/omp/tarefa_d
+
+# Ambientes Virtuais Python
+venv/
+.venv/
