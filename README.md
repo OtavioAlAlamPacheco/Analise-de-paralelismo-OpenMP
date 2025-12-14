@@ -1,9 +1,6 @@
 # Trabalho Prático 1 — OpenMP (2025/2)
 
-**Disciplina:** Programação Paralela
-**Tema:** OpenMP na prática — laços, SIMD e organização de regiões paralelas
-**Entrega:** 19 de dezembro de 2025
-
+**Disciplina:** Introdução a Programação ParalelaDistribuída
 ---
 
 ## 📌 Visão Geral
