@@ -63,36 +63,36 @@ run: all
 	@echo "Executando run.sh..."
 	./run.sh
 
-# ======================================================================
-# Plot — APENAS para Linux
-# ======================================================================
-#plot:
-#	@if [ ! -d "venv" ]; then \
-#		echo "Criando venv pela primeira vez..."; \
-#		python3 -m venv venv; \
-#		. venv/bin/activate && pip install pandas matplotlib numpy; \
-#	fi
-#	@echo "Ativando venv e gerando gráficos..."
-#	. venv/bin/activate && python3 plot.py
 
 # ======================================================================
-# Plot — APENAS para Windows/Git Bash
+# Plot — APENAS para Linux
 # ======================================================================
 plot:
 	@if [ ! -d "venv" ]; then \
 		echo "Criando venv pela primeira vez..."; \
-		\
-		python -m venv venv 2>/dev/null || python3 -m venv venv || { \
-			echo "ERRO: O comando 'python' ou 'python3' não foi encontrado."; \
-			exit 1; \
-		}; \
-		\
-		echo "Instalando dependências..."; \
-		./venv/Scripts/pip install pandas matplotlib numpy; \
-	fi;
-	
+		python3 -m venv venv; \
+		. venv/bin/activate && pip install pandas matplotlib numpy; \
+	fi
 	@echo "Ativando venv e gerando gráficos..."
-	sh -c ". venv/Scripts/activate && python plot.py"
+	. venv/bin/activate && python3 plot.py
+
+# ======================================================================
+# Plot — APENAS para Windows/Git Bash
+# ======================================================================
+#plot:
+#	@if [ ! -d "venv" ]; then \
+#		echo "Criando venv pela primeira vez..."; \
+#		\
+#		python -m venv venv 2>/dev/null || python3 -m venv venv || { \
+#			echo "ERRO: O comando 'python' ou 'python3' não foi encontrado."; \
+#			exit 1; \
+#		}; \
+#		\
+#		echo "Instalando dependências..."; \
+#		./venv/Scripts/pip install pandas matplotlib numpy; \
+#	fi;
+#	@echo "Ativando venv e gerando gráficos..."
+#	sh -c ". venv/Scripts/activate && python plot.py"
 
 # ======================================================================
 # Limpeza
