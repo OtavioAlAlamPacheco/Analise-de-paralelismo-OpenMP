@@ -19,7 +19,7 @@ Todas as implementações seguem rigorosamente as especificações do enunciado 
 ## 👥 Integrantes do Grupo
 
 * Theo Viebrantz Cassuriaga — implementação Tarefa C, geração do run, makefile e plot.py
-* Otavio Al AlamPacheco — implementação Tarefa D, do resultados, reproducibilidade e repositório
+* Otávio Al Alam Pacheco — implementação Tarefa D, do resultados, reproducibilidade e repositório
 
 **Tarefas desenvolvidas:**
 
