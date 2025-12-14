@@ -3,7 +3,7 @@
 **Disciplina:** Introdução a Programação ParalelaDistribuída
 ---
 
-## 📌 Visão Geral
+##  Visão Geral
 
 Este repositório contém a implementação e a análise experimental das **Tarefas C e D** do *Trabalho Prático 1 de OpenMP*, cujo objetivo é aplicar conceitos fundamentais de programação paralela em C utilizando **OpenMP 5.x**, com foco em:
 
@@ -23,17 +23,17 @@ Todas as implementações seguem rigorosamente as especificações do enunciado 
 
 **Tarefas desenvolvidas:**
 
-* ✅ Tarefa C — Vetorização com SIMD
-* ✅ Tarefa D — Organização da região paralela
+*  Tarefa C — Vetorização com SIMD
+*  Tarefa D — Organização da região paralela
 
 ---
 
-## 🧪 Tarefas Implementadas
+##  Tarefas Implementadas
 
-### 🔹 Tarefa C — Vetorização com SIMD (SAXPY)
-### 🔹 Tarefa D — Organização da Região Paralela
+###  Tarefa C — Vetorização com SIMD (SAXPY)
+###  Tarefa D — Organização da Região Paralela
 
-## 🗂️ Estrutura do Repositório
+##  Estrutura do Repositório
 
 ```
 .
@@ -55,7 +55,7 @@ Todas as implementações seguem rigorosamente as especificações do enunciado 
 
 ---
 
-## ⚙️ Requisitos do Ambiente
+##  Requisitos do Ambiente
 
 * Sistema Operacional: **Linux** (testado em Ubuntu 24.04)
 * Compilador: **GCC 13.x** com suporte a OpenMP 5.x
@@ -66,7 +66,7 @@ Todas as implementações seguem rigorosamente as especificações do enunciado 
 
 ---
 
-## 🛠️ Compilação, Execução dos Experimentos E Geração de Gráficos
+##  Compilação, Execução dos Experimentos E Geração de Gráficos
 
 A execução completa da matriz de experimentos é feita automaticamente pelo script `run.sh`.
 
@@ -105,7 +105,7 @@ Parâmetros utilizados:
   
 ---
 
-## 📈 Resultados e Análise
+##  Resultados e Análise
 
 A análise detalhada dos resultados, incluindo:
 
@@ -115,11 +115,11 @@ A análise detalhada dos resultados, incluindo:
 
 está disponível no arquivo:
 
-📄 **RESULTADOS.md**
+ **RESULTADOS.md**
 
 ---
 
-## 🔁 Reprodutibilidade
+##  Reprodutibilidade
 
 Todas as informações necessárias para reproduzir os experimentos — incluindo:
 
@@ -131,11 +131,11 @@ Todas as informações necessárias para reproduzir os experimentos — incluind
 
 estão documentadas em:
 
-📄 **REPRODUCIBILIDADE.md**
+ **REPRODUCIBILIDADE.md**
 
 ---
 
-## 📝 Observações Finais
+##  Observações Finais
 
 * Os resultados devem ser interpretados considerando o ambiente de execução (máquina virtual).
 * Para valores pequenos de N, o overhead do OpenMP pode superar os ganhos do paralelismo.
