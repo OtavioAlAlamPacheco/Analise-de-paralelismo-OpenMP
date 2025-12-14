@@ -18,10 +18,8 @@ Todas as implementações seguem rigorosamente as especificações do enunciado 
 
 ## 👥 Integrantes do Grupo
 
-> **(Preencher antes da entrega)**
-
-* Nome do integrante 1 — implementação Tarefa C, análise de resultados
-* Nome do integrante 2 — implementação Tarefa D, scripts e automação
+* Theo Viebrantz Cassuriaga — implementação Tarefa C, geração do run, makefile e plot.py
+* Otavio Al AlamPacheco — implementação Tarefa D, do resultados, reproducibilidade e repositório
 
 **Tarefas desenvolvidas:**
 
@@ -33,33 +31,7 @@ Todas as implementações seguem rigorosamente as especificações do enunciado 
 ## 🧪 Tarefas Implementadas
 
 ### 🔹 Tarefa C — Vetorização com SIMD (SAXPY)
-
-Kernel avaliado:
-
-```
-y[i] = a * x[i] + y[i]
-```
-
-Variantes implementadas:
-
-* **V1 — Sequencial:** laço simples, sem paralelismo
-* **V2 — SIMD:** uso de `#pragma omp simd`
-* **V3 — Paralelo + SIMD:** uso de `#pragma omp parallel for simd`
-
-O objetivo é analisar os ganhos, limitações e overheads da vetorização explícita e da combinação entre SIMD e paralelismo por threads.
-
----
-
 ### 🔹 Tarefa D — Organização da Região Paralela
-
-Comparação entre duas abordagens para laços consecutivos:
-
-* **Variante Ingênua:** dois `#pragma omp parallel for` consecutivos
-* **Variante Arrumada:** uma única região `#pragma omp parallel` contendo dois `for`
-
-O foco é medir o impacto do overhead de criação de regiões paralelas e demonstrar boas práticas de organização do código OpenMP.
-
----
 
 ## 🗂️ Estrutura do Repositório
 
@@ -94,59 +66,43 @@ O foco é medir o impacto do overhead de criação de regiões paralelas e demon
 
 ---
 
-## 🛠️ Compilação
+## 🛠️ Compilação, Execução dos Experimentos E Geração de Gráficos
 
-Para compilar todos os executáveis:
+A execução completa da matriz de experimentos é feita automaticamente pelo script `run.sh`.
 
 ```bash
 make
 ```
 
-Ou, alternativamente:
-
-```bash
-make all
-```
-
-Os binários serão gerados nos mesmos diretórios dos arquivos fonte.
-
----
-
-## ▶️ Execução dos Experimentos
-
-A execução completa da matriz de experimentos é feita automaticamente pelo script `run.sh`.
-
 ```bash
 make run
 ```
 
-Esse comando:
+```bash
+make plot
+```
 
-* Compila o projeto (se necessário)
-* Ajusta permissões de execução do script
-* Executa todos os testes definidos no enunciado
-* Gera o arquivo `resultados.csv`
+Estes comandos:
+
+* Compilam o projeto (se necessário)
+* Ajustam permissões de execução do script
+* Executam todos os testes definidos no enunciado
+* Geram o arquivo `resultados.csv`
+* O Makefile cria automaticamente um ambiente virtual Python (`venv`) e instala as dependências necessárias (`pandas`, `numpy`, `matplotlib`).
+* Os gráficos são salvos no diretório raiz do projeto.
+
+Caso deseje recompilar e gerar os gráficos e resultados, é possível remover tudo gerado pelo make utilizando o comando:
+
+```bash
+make clean
+```
 
 Parâmetros utilizados:
 
 * **N:** {100000, 500000, 1000000}
 * **Threads:** {1, 2, 4, 8, 16}
 * **Repetições:** 5 por ponto experimental
-
----
-
-## 📊 Geração de Gráficos
-
-Para gerar os gráficos automaticamente a partir do CSV:
-
-```bash
-make plot
-```
-
-O Makefile cria automaticamente um ambiente virtual Python (`venv`) e instala as dependências necessárias (`pandas`, `numpy`, `matplotlib`).
-
-Os gráficos são salvos no diretório raiz do projeto.
-
+  
 ---
 
 ## 📈 Resultados e Análise
@@ -154,7 +110,6 @@ Os gráficos são salvos no diretório raiz do projeto.
 A análise detalhada dos resultados, incluindo:
 
 * tabelas
-* gráficos
 * comparação entre variantes
 * discussão sobre overhead, escalabilidade e limitações
 
@@ -185,13 +140,3 @@ estão documentadas em:
 * Os resultados devem ser interpretados considerando o ambiente de execução (máquina virtual).
 * Para valores pequenos de N, o overhead do OpenMP pode superar os ganhos do paralelismo.
 * A análise foi baseada em dados experimentais, conforme exigido no enunciado.
-
-> *“Compare versões com dados, não por fé.”*
-
----
-
-## 📚 Referências
-
-* OpenMP Application Programming Interface — Version 5.x
-* Documentação do GCC
-* Material da disciplina de Programação Paralela
